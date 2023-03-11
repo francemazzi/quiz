@@ -1,12 +1,12 @@
-# quiz
+# Welcome in a quiz test
 
-A new Flutter project.
+I am learning Flutter so this is my template project!
 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Do you want to hel me? I give you a few resources to get you started if this is your first Flutter project:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
