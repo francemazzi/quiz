@@ -11,17 +11,43 @@ class Ask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
           questions[0].question.toString(),
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.black,
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
         ),
+        const SizedBox(
+          height: 20,
+        ),
         ElevatedButton(
+          style: ButtonStyle(
+            padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+              const EdgeInsets.all(15.0), // Qui definiamo il padding
+            ),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(
+                    100.0), // Qui definiamo il raggio di curvatura
+              ),
+            ),
+            textStyle: MaterialStateProperty.all<TextStyle>(
+              const TextStyle(
+                fontFamily: 'Inter',
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.w500,
+                fontSize: 17.0,
+                height: 28.0 / 17.0,
+              ),
+            ),
+            backgroundColor:
+                MaterialStateProperty.all<Color>(const Color(0xFF5319FF)),
+          ),
           onPressed: () {
             clickButton(0);
           },

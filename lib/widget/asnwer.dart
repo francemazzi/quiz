@@ -9,11 +9,23 @@ class Answer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Center(
       child: Column(
         children: [
+          const SizedBox(
+            height: 20,
+          ),
           Text(
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
               "La risposta data è $isAnswerGivenCorrect , è ${isAnswerGivenCorrect ? "corretta" : "sbagliata"}"),
+          const SizedBox(
+            height: 20,
+          ),
           ElevatedButton(
               onPressed: () {
                 quizReset();

@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: QuestionGamePage(title: 'Quiz me something'),
+      home: const QuestionGamePage(title: 'Quiz me something'),
     );
   }
 }

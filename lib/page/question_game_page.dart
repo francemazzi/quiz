@@ -5,6 +5,7 @@ import 'package:quiz/question_list.dart';
 import 'package:quiz/widget/ask.dart';
 
 import '../widget/asnwer.dart';
+import '../widget/navbar.dart';
 
 class QuestionGamePage extends StatefulWidget {
   final String title;
@@ -33,9 +34,7 @@ class _QuestionGamePageState extends State<QuestionGamePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: Navbar(widget.title),
       body: Container(
           padding: const EdgeInsets.all(16.0),
           child: isAnswerGivenCorrect == null
