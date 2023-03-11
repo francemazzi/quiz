@@ -18,3 +18,11 @@ Do you want to hel me? I give you a few resources to get you started if this is 
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+#TODO LIST:
+
+- Centralizzare il tema
+- Fare compoente bottone risposta
+- Stato diffuso e controllato del widget
+- Domande dinamiche che variano al click
+- [...]
