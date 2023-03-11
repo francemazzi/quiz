@@ -2,6 +2,10 @@
 
 I am learning Flutter so this is my template project!
 
+## Shortcut
+
+If you digit s on keyboard on your dart page you can select the type your boilerplate widget!
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
