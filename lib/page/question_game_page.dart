@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:quiz/question_list.dart';
+import 'package:quiz/widget/ask.dart';
+
+import '../widget/asnwer.dart';
 
 class QuestionGamePage extends StatefulWidget {
   final String title;
@@ -34,55 +37,10 @@ class _QuestionGamePageState extends State<QuestionGamePage> {
         title: Text(widget.title),
       ),
       body: Container(
-        padding: const EdgeInsets.all(16.0),
-        child: isAnswerGivenCorrect == null
-            ? Column(
-                children: [
-                  Text(
-                    questions[0].question.toString(),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      clickButton(0);
-                    },
-                    child: Text(questions[0].answer[0].toString()),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => {clickButton(1)},
-                    child: Text(questions[0].answer[1].toString()),
-                  ),
-                  ElevatedButton(
-                    onPressed: () => {clickButton(2)},
-                    child: Text(questions[0].answer[2].toString()),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      clickButton(3);
-                    },
-                    child: Text(questions[0].answer[3].toString()),
-                  ),
-                ],
-              )
-            : Container(
-                child: Column(
-                  children: [
-                    Text(
-                        "La risposta data è $isAnswerGivenCorrect , è ${isAnswerGivenCorrect ? "corretta" : "sbagliata"}"),
-                    ElevatedButton(
-                        onPressed: () {
-                          quizReset();
-                        },
-                        child: Text("Resetta il quiz"))
-                  ],
-                ),
-              ),
-      ),
+          padding: const EdgeInsets.all(16.0),
+          child: isAnswerGivenCorrect == null
+              ? Ask(clickButton)
+              : Answer(isAnswerGivenCorrect, quizReset)),
     );
   }
 }
