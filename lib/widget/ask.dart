@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'dart:math';
 
 import '../question_list.dart';
 import 'button_answer.dart';
 
 class Ask extends StatelessWidget {
   final Function clickButton;
-  const Ask(this.clickButton, {super.key});
+  final int numberOfQuestion;
+  const Ask(this.clickButton, this.numberOfQuestion, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class Ask extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          questions[0].question.toString(),
+          questions[numberOfQuestion].question.toString(),
           textAlign: TextAlign.center,
           style: const TextStyle(
             color: Colors.black,
@@ -34,28 +36,13 @@ class Ask extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  AskButton(clickButton, questions[0].answer[i].toString()),
+                  AskButton(clickButton,
+                      questions[numberOfQuestion].answer[i].toString()),
                   const SizedBox(height: 10),
                 ],
               )
           ],
         )
-
-        // AskButton(clickButton, questions[0].answer[0].toString()),
-        // ElevatedButton(
-        //   onPressed: () => {clickButton(1)},
-        //   child: Text(questions[0].answer[1].toString()),
-        // ),
-        // ElevatedButton(
-        //   onPressed: () => {clickButton(2)},
-        //   child: Text(questions[0].answer[2].toString()),
-        // ),
-        // ElevatedButton(
-        //   onPressed: () {
-        //     clickButton(3);
-        //   },
-        //   child: Text(questions[0].answer[3].toString()),
-        // ),
       ],
     );
   }

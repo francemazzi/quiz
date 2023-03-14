@@ -4,7 +4,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 
 class Navbar extends StatelessWidget with PreferredSizeWidget {
   final String widget;
-  const Navbar(this.widget, {super.key});
+  final int incrementAnswer;
+  const Navbar(this.widget, this.incrementAnswer, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +25,8 @@ class Navbar extends StatelessWidget with PreferredSizeWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const Text(
-                "1/10",
+              Text(
+                "$incrementAnswer/10",
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.white,
