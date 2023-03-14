@@ -37,7 +37,7 @@ class Ask extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   AskButton(clickButton,
-                      questions[numberOfQuestion].answer[i].toString()),
+                      questions[numberOfQuestion].answer[i].toString(), i),
                   const SizedBox(height: 10),
                 ],
               )

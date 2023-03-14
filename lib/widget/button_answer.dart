@@ -7,7 +7,9 @@ import '../question_list.dart';
 class AskButton extends StatelessWidget {
   final Function clickButton;
   final String textAnswer;
-  const AskButton(this.clickButton, this.textAnswer, {super.key});
+  final int indexClicked;
+  const AskButton(this.clickButton, this.textAnswer, this.indexClicked,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class AskButton extends StatelessWidget {
             MaterialStateProperty.all<Color>(const Color(0xFF5319FF)),
       ),
       onPressed: () {
-        clickButton(0);
+        clickButton(indexClicked);
       },
       child: Text(textAnswer),
     );

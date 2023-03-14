@@ -29,7 +29,7 @@ class _QuestionGamePageState extends State<QuestionGamePage> {
 
   void clickButton(int index) {
     setState(() {
-      isAnswerGivenCorrect = questions[0].answerIndex == index;
+      isAnswerGivenCorrect = questions[numberOfQuestion].answerIndex == index;
     });
   }
 
