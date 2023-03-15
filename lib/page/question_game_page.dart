@@ -20,35 +20,29 @@ class QuestionGamePage extends StatefulWidget {
 class _QuestionGamePageState extends State<QuestionGamePage> {
   var isAnswerGivenCorrect = null;
   int incrementAnswer = 0;
-  int numberOfQuestion = 1;
-
-  var randomGenerator = () {
-    final random = Random();
-    return random.nextInt(30) + 1;
-  };
 
   void clickButton(int index) {
     setState(() {
-      isAnswerGivenCorrect = questions[numberOfQuestion].answerIndex == index;
+      isAnswerGivenCorrect = questions[incrementAnswer].answerIndex == index;
     });
   }
 
   void quizReset() {
     setState(() {
       isAnswerGivenCorrect = null;
-      incrementAnswer++;
+      incrementAnswer < 9 ? incrementAnswer++ : incrementAnswer = 0;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: Navbar(widget.title, incrementAnswer),
+      appBar: Navbar(widget.title, incrementAnswer, true),
       body: Container(
           padding: const EdgeInsets.all(16.0),
           child: isAnswerGivenCorrect == null
-              ? Ask(clickButton, numberOfQuestion)
-              : Answer(isAnswerGivenCorrect, quizReset)),
+              ? Ask(clickButton, incrementAnswer)
+              : Answer(isAnswerGivenCorrect, quizReset, incrementAnswer)),
     );
   }
 }

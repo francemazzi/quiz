@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'dart:math';
 
 import '../question_list.dart';
 import 'button_answer.dart';
@@ -32,7 +31,7 @@ class Ask extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            for (int i = 0; i < questions[0].answer.length; i++)
+            for (int i = 0; i < questions[numberOfQuestion].answer.length; i++)
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [

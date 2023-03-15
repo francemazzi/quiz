@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz/page/home_page.dart';
 import 'package:quiz/page/question_game_page.dart';
 import 'package:quiz/question_list.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const QuestionGamePage(title: 'Quiz me something'),
+      home: const Home(),
     );
   }
 }

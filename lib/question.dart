@@ -13,8 +13,12 @@ class Question {
   });
 }
 
-//Se volessimo strutturare dati senza array di option optare per classe di option
-// class Option {
-//   final text;
-//   Option({this.text});
+// class GameSessione {
+//         "startAt": "1982-02-28T00:00:00.0Z",
+//         "category": "serie-a",
+//         "tags": [
+//             "aliqua sit enim eu",
+//             "consectetur commodo Duis esse est"
+//         ],
 // }
+

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:quiz/page/home_page.dart';
 
 class Answer extends StatelessWidget {
   final isAnswerGivenCorrect;
+  final int numberOfQuestion;
   final Function quizReset;
-  const Answer(this.isAnswerGivenCorrect, this.quizReset, {super.key});
+  const Answer(this.isAnswerGivenCorrect, this.quizReset, this.numberOfQuestion,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,12 @@ class Answer extends StatelessWidget {
           ),
           ElevatedButton(
               onPressed: () {
-                quizReset();
+                numberOfQuestion == 9
+                    ? Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Home()),
+                      )
+                    : quizReset();
               },
               child: Text("Resetta il quiz"))
         ],

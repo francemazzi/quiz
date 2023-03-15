@@ -1,6 +1,6 @@
 import 'package:quiz/question.dart';
 
-final questions = [
+List questions = [
   Question(
     question: "Quali sono le cinque lingue più parlate al mondo?",
     answerIndex: 1,
@@ -21,12 +21,18 @@ final questions = [
   Question(
     question: "Quali sono le tappe del Tour de France 2023?",
     answerIndex: 0,
-    answer: ["Brest", "Lorient", "Nantes", "La Rochelle", "Bordeaux"],
+    answer: [
+      "Brest",
+      "Lorient",
+      "Nantes",
+      "La Rochelle",
+      "Bordeaux",
+    ],
   ),
   Question(
     question: "Quanti grammi di zucchero ci sono in una lattina di Coca-Cola?",
     answerIndex: 2,
-    answer: ["35 grammi"],
+    answer: ["35 grammi", "35 grammi", "35 grammi", "35 grammi"],
   ),
   Question(
     question: "Quali sono le sette meraviglie del mondo antico?",
@@ -44,7 +50,7 @@ final questions = [
   Question(
     question: "Quando è stato fondato Facebook?",
     answerIndex: 1,
-    answer: ["2004"],
+    answer: ["2004", "2004", "2004", "2004"],
   ),
   Question(
     question: "Quali sono le tappe del campionato di Formula 1 2023?",
@@ -62,7 +68,7 @@ final questions = [
   Question(
     question: "Chi ha vinto il premio Oscar per il miglior attore nel 2022?",
     answerIndex: 0,
-    answer: ["Will Smith"],
+    answer: ["Will Smith", "Will Smith", "Will Smith", "Will Smith"],
   ),
   Question(
     question: "Quali sono le dimensioni del campo di calcio?",
@@ -70,11 +76,20 @@ final questions = [
     answer: [
       "100-110 metri di lunghezza",
       "64-75 metri di larghezza",
+      "64-75 metri di larghezza",
     ],
   ),
   Question(
     question: "Quanti elementi chimici sono presenti nella tavola periodica?",
     answerIndex: 1,
-    answer: ["118"],
+    answer: ["118", "118", "118", "118"],
   ),
 ];
+
+// "id": "1721f7d8-767c-f9a3-030e-19e200c16141",
+//         "startAt": "1982-02-28T00:00:00.0Z",
+//         "category": "serie-a",
+//         "tags": [
+//             "aliqua sit enim eu",
+//             "consectetur commodo Duis esse est"
+//         ],
