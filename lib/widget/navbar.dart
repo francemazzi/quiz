@@ -18,13 +18,17 @@ class Navbar extends StatelessWidget with PreferredSizeWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(
-                widget,
-                style: const TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+              //  Text(
+              //   widget,
+              //   style: const TextStyle(
+              //     fontSize: 20,
+              //     color: Colors.white,
+              //     fontWeight: FontWeight.bold,
+              //   ),
+              // ),
+              SizedBox(
+                width: 100,
+                child: Image(image: AssetImage("assets/images/logo.png")),
               ),
               stateQuiz
                   ? Text(

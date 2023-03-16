@@ -21,9 +21,15 @@ class _QuestionGamePageState extends State<QuestionGamePage> {
   var isAnswerGivenCorrect = null;
   int incrementAnswer = 0;
 
+  late int value = 0;
+
   void clickButton(int index) {
     setState(() {
       isAnswerGivenCorrect = questions[incrementAnswer].answerIndex == index;
+      if (isAnswerGivenCorrect) {
+        value++;
+        // print(index);
+      }
     });
   }
 
@@ -42,7 +48,8 @@ class _QuestionGamePageState extends State<QuestionGamePage> {
           padding: const EdgeInsets.all(16.0),
           child: isAnswerGivenCorrect == null
               ? Ask(clickButton, incrementAnswer)
-              : Answer(isAnswerGivenCorrect, quizReset, incrementAnswer)),
+              : Answer(
+                  isAnswerGivenCorrect, quizReset, incrementAnswer, value)),
     );
   }
 }

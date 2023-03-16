@@ -6,7 +6,8 @@ import 'package:quiz/page/question_game_page.dart';
 import '../widget/navbar.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  final bool stateGame;
+  const Home({super.key, required this.stateGame});
 
   @override
   State<Home> createState() => _HomeState();
@@ -14,6 +15,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool stateQuiz = false;
+
+  // @override
+  // void initialState() {
+  //   stateQuiz = widget.stateGame;
+  //   super.initState();
+  // }
 
   void quizSart() {
     setState(() {
@@ -28,12 +35,9 @@ class _HomeState extends State<Home> {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      const QuestionGamePage(title: 'Quiz me something')),
-            );
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) =>
+                    QuestionGamePage(title: 'Quiz me something')));
           },
           child: const Text('Start Quiz'),
         ),

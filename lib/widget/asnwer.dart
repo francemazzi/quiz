@@ -6,8 +6,10 @@ import 'package:quiz/page/home_page.dart';
 class Answer extends StatelessWidget {
   final isAnswerGivenCorrect;
   final int numberOfQuestion;
+  final int value;
   final Function quizReset;
   const Answer(this.isAnswerGivenCorrect, this.quizReset, this.numberOfQuestion,
+      this.value,
       {super.key});
 
   @override
@@ -32,10 +34,7 @@ class Answer extends StatelessWidget {
           ElevatedButton(
               onPressed: () {
                 numberOfQuestion == 9
-                    ? Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Home()),
-                      )
+                    ? Navigator.of(context).pop()
                     : quizReset();
               },
               child: Text("Resetta il quiz"))
