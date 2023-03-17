@@ -7,18 +7,18 @@ part of 'game_model.dart';
 // **************************************************************************
 
 APIGameQuery _$APIGameQueryFromJson(Map<String, dynamic> json) => APIGameQuery(
-      questionsGame: (json['questionsGame'] as List<dynamic>)
+      questions: (json['questions'] as List<dynamic>)
           .map((e) => QuestionModel.fromJson(e as Map<String, dynamic>))
           .toList(),
+      tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
       id: json['id'] as String,
       startAt: json['startAt'] as String,
       category: json['category'] as String,
-      tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$APIGameQueryToJson(APIGameQuery instance) =>
     <String, dynamic>{
-      'questionsGame': instance.questionsGame,
+      'questions': instance.questions,
       'id': instance.id,
       'startAt': instance.startAt,
       'category': instance.category,

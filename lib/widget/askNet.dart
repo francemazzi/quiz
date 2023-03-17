@@ -19,17 +19,10 @@ class AskNet extends StatefulWidget {
 class _AskNetState extends State<AskNet> {
   late Future<APIGameQuery> gameQuery;
 
-  Future<APIGameQuery> loadGameData() async {
-    final jsonData = await GameServices().fetchData();
-    //return string -> APIGameQuery.fromJson(jsonDecode(jsonString as String))
-    return APIGameQuery.fromJson(
-        jsonDecode(jsonData as String) as Map<String, dynamic>);
-  }
-
   @override
   void initState() {
     super.initState();
-    gameQuery = loadGameData();
+    gameQuery = GameServices().fetchData();
   }
 
   @override
@@ -39,12 +32,12 @@ class _AskNetState extends State<AskNet> {
       future: gameQuery,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          return Text(snapshot.data!.id);
+          return Text(snapshot.data!.startAt);
         } else if (snapshot.hasError) {
           return Text('${snapshot.error}');
         }
 
-        //Spinner.
+        //Spinner
         return const CircularProgressIndicator();
       },
     ));

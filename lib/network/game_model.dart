@@ -6,14 +6,15 @@ part 'game_model.g.dart';
 //classe inizializzata per serializzare json
 @JsonSerializable()
 class APIGameQuery {
-  APIGameQuery(
-      {required this.questionsGame,
-      required this.id,
-      required this.startAt,
-      required this.category,
-      required this.tags});
+  APIGameQuery({
+    required this.questions,
+    required this.tags,
+    required this.id,
+    required this.startAt,
+    required this.category,
+  });
 
-  List<QuestionModel> questionsGame;
+  List<QuestionModel> questions;
   String id;
   String startAt;
   String category;
