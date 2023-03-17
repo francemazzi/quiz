@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:quiz/question_list.dart';
 import 'package:quiz/widget/ask.dart';
 
+import '../widget/askNet.dart';
 import '../widget/asnwer.dart';
 import '../widget/navbar.dart';
 
@@ -47,9 +48,12 @@ class _QuestionGamePageState extends State<QuestionGamePage> {
       body: Container(
           padding: const EdgeInsets.all(16.0),
           child: isAnswerGivenCorrect == null
-              ? Ask(clickButton, incrementAnswer)
+              ? AskNet()
               : Answer(
                   isAnswerGivenCorrect, quizReset, incrementAnswer, value)),
     );
   }
 }
+
+
+//AskNet al posto di Ask(clickButton, incrementAnswer)
